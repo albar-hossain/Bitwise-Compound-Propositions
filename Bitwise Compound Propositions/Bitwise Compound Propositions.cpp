@@ -8,7 +8,7 @@ void bitwiseOr(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
 	system("CLS");
-	cout << "\nBitwise truth table for P OR Q: \n" << endl;
+	cout << "\nBitwise Truth Table For P OR Q: \n" << endl;
 	cout << "		" << "----------------------------" << endl;
 	cout << "		" << "|  P   |   Q   |   P | Q   |" << endl;
 	cout << "		" << "----------------------------" << endl;
@@ -23,13 +23,14 @@ void bitwiseAnd(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
 	system("CLS");
-	cout << "\nBitwise truth table for P AND Q: " << endl;
-	cout << "P	Q	P & Q" << endl;
-	cout << "--------------------------" << endl;
+	cout << "\nBitwise Truth Table For P AND Q: \n" << endl;
+	cout << "		" << "----------------------------" << endl;
+	cout << "		" << "|  P   |   Q   |   P & Q   |" << endl;
+	cout << "		" << "----------------------------" << endl;
 	for (int i = 0; i < p_size; i++)
 	{
-		cout << p[i] << "	" << q[i] << "	  " << (char)(p[i] & q[i]) << endl;
-		cout << "--------------------------" << endl;
+		cout << "		|  " << p[i] << "   |   " << q[i] << "   |     " << (char)(p[i] & q[i]) << "	   |" << endl;
+		cout << "		" << "----------------------------" << endl;
 	}
 }
 
@@ -37,13 +38,14 @@ void bitwiseXor(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
 	system("CLS");
-	cout << "\nBitwise truth table for P XOR Q: " << endl;
-	cout << "P	Q	P ^ Q" << endl;
-	cout << "--------------------------" << endl;
+	cout << "\nBitwise Truth Table For P XOR Q: \n" << endl;
+	cout << "		" << "----------------------------" << endl;
+	cout << "		" << "|  P   |   Q   |   P ^ Q   |" << endl;
+	cout << "		" << "----------------------------" << endl;
 	for (int i = 0; i < p_size; i++)
 	{
-		cout << p[i] << "	" << q[i] << "	  " << (p[i] ^ q[i]) << endl;
-		cout << "--------------------------" << endl;
+		cout << "		|  " << p[i] << "   |   " << q[i] << "   |     " << (p[i] ^ q[i]) << "	   |" << endl;
+		cout << "		" << "----------------------------" << endl;
 	}
 }
 
@@ -60,7 +62,8 @@ void greet() {
   ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___  ___
  |___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___||___|
 
-)" << "\n";
+)";
+	cout << "												Author: Albar Hossain (21-43093-2)" << endl;
 }
 
 void bye() {
