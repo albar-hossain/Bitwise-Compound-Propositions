@@ -8,13 +8,14 @@ void bitwiseOr(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
 	system("CLS");
-	cout << "\nBitwise truth table for P OR Q: " << endl;
-	cout << "P	Q	P | Q" << endl;
-	cout << "--------------------------" << endl;
+	cout << "\nBitwise truth table for P OR Q: \n" << endl;
+	cout << "		" << "----------------------------" << endl;
+	cout << "		" << "|  P   |   Q   |   P | Q   |" << endl;
+	cout << "		" << "----------------------------" << endl;
 	for (int i = 0; i < p_size; i++)
 	{
-		cout << p[i] << "	" << q[i] << "	  " << (char)(p[i] | q[i]) << endl;
-		cout << "--------------------------" << endl;
+		cout << "		|  " << p[i] << "   |   " << q[i] << "   |     " << (char)(p[i] | q[i]) << "	   |" << endl;
+		cout << "		" << "----------------------------" << endl;
 	}
 }
 
