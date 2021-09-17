@@ -1,12 +1,14 @@
 ﻿#include <iostream>
 #include <stdlib.h>
 #include <windows.h>
+#include <cctype>
 #include <string>
 using namespace std;
 
 void bitwiseOr(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
+	system("CLS");
 	cout << "\nBitwise truth table for P OR Q: " << endl;
 	cout << "P	Q	P | Q" << endl;
 	cout << "--------------------------" << endl;
@@ -20,6 +22,7 @@ void bitwiseOr(string p, string q) {
 void bitwiseAnd(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
+	system("CLS");
 	cout << "\nBitwise truth table for P AND Q: " << endl;
 	cout << "P	Q	P & Q" << endl;
 	cout << "--------------------------" << endl;
@@ -33,6 +36,7 @@ void bitwiseAnd(string p, string q) {
 void bitwiseXor(string p, string q) {
 	int p_size = p.size();
 	int q_size = q.size();
+	system("CLS");
 	cout << "\nBitwise truth table for P XOR Q: " << endl;
 	cout << "P	Q	P ^ Q" << endl;
 	cout << "--------------------------" << endl;
@@ -115,9 +119,105 @@ void display() {
 	cout << "Choose an option (1-5): ";
 }
 
+void invalid() {
+	cout << R"(
+  ___                  _  _     _   ___       _           _    _
+ |_ _| _ _ __ __ __ _ | |(_) __| | / __| ___ | | ___  __ | |_ (_) ___  _ _
+  | | | ' \\ V // _` || || |/ _` | \__ \/ -_)| |/ -_)/ _||  _|| |/ _ \| ' \  _
+ |___||_||_|\_/ \__,_||_||_|\__,_| |___/\___||_|\___|\__| \__||_|\___/|_||_|(_)
+
+)" << "\n";
+}
+
+void getChoice() {
+	cout << R"(
+ __      __           _     _  __   __            _     _  _          _____        ___            _    _                 ___    ____   __ __ _  _ __
+ \ \    / /___  _  _ | | __| | \ \ / /___  _  _  | |   (_)| |__ ___  |_   _|___   / __| ___  _ _ | |_ (_) _ _  _  _  ___|__ \  / /\ \ / // /| \| |\ \
+  \ \/\/ // _ \| || || |/ _` |  \ V // _ \| || | | |__ | || / // -_)   | | / _ \ | (__ / _ \| ' \|  _|| || ' \| || |/ -_) /_/ | |  \ V // / | .` | | |
+   \_/\_/ \___/ \_,_||_|\__,_|   |_| \___/ \_,_| |____||_||_\_\\___|   |_| \___/  \___|\___/|_||_|\__||_||_||_|\_,_|\___|(_)  | |   |_|/_/  |_|\_| | |
+                                                                                                                               \_\                /_/
+)" << "\n";
+}
+
 int main()
 {
 	ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
+	char choice = 'y';
+	//int selection{};
+	//string p{}, q{};
+
+	//greet();
+	//cout << "Enter First Bit String: ";
+	//cin >> p;
+
+	//cout << "Enter Second Bit String: ";
+	//cin >> q;
+	//system("CLS");
+	//display();
+	//cin >> selection;
+
+	//while (choice != 'n' && choice != 'N')
+	//{
+	//	if (selection == 1)
+	//	{
+	//		bitwiseOr(p, q);
+	//		getChoice();
+	//		cin >> choice;
+	//		if (choice != 'n' && choice != 'N')
+	//		{
+	//			display();
+	//			cin >> selection;
+	//		}
+	//	}
+	//	else if (selection == 2)
+	//	{
+	//		bitwiseAnd(p, q);
+	//		getChoice();
+	//		cin >> choice;
+	//		if (choice != 'n' && choice != 'N')
+	//		{
+	//			display();
+	//			cin >> selection;
+	//		}
+	//	}
+	//	else if (selection == 3)
+	//	{
+	//		bitwiseXor(p, q);
+	//		getChoice();
+	//		cin >> choice;
+	//		if (choice != 'n' && choice != 'N')
+	//		{
+	//			display();
+	//			cin >> selection;
+	//		}
+	//	}
+	//	else if (selection == 4)
+	//	{
+	//		system("CLS");
+	//		cout << "Enter New First Bit String: ";
+	//		cin >> p;
+
+	//		cout << "Enter New Second Bit String: ";
+	//		cin >> q;
+	//		system("CLS");
+	//		display();
+	//		cin >> selection;
+	//	}
+	//	else if (selection == 5)
+	//	{
+	//		system("CLS");
+	//		bye();
+	//		return 0;
+	//	}
+	//	else
+	//	{
+	//		system("CLS");
+	//		invalid();
+	//		display();
+	//		cin >> selection;
+	//	}
+	//}
+
 	int selection{};
 	string p{}, q{};
 
@@ -130,27 +230,43 @@ int main()
 	system("CLS");
 	display();
 	cin >> selection;
-
-	while (selection != 5)
+	do
 	{
 		if (selection == 1)
 		{
 			bitwiseOr(p, q);
-			display();
-			cin >> selection;
-			system("CLS");
+			getChoice();
+			cin >> choice;
+			if (choice != 'n' && choice != 'N')
+			{
+				system("CLS");
+				display();
+				cin >> selection;
+			}
 		}
 		else if (selection == 2)
 		{
 			bitwiseAnd(p, q);
-			display();
-			cin >> selection;
+			getChoice();
+			cin >> choice;
+			if (choice != 'n' && choice != 'N')
+			{
+				system("CLS");
+				display();
+				cin >> selection;
+			}
 		}
 		else if (selection == 3)
 		{
 			bitwiseXor(p, q);
-			display();
-			cin >> selection;
+			getChoice();
+			cin >> choice;
+			if (choice != 'n' && choice != 'N')
+			{
+				system("CLS");
+				display();
+				cin >> selection;
+			}
 		}
 		else if (selection == 4)
 		{
@@ -160,16 +276,22 @@ int main()
 
 			cout << "Enter New Second Bit String: ";
 			cin >> q;
+			system("CLS");
 			display();
 			cin >> selection;
 		}
-
-		cin >> selection;
-	}
-	if (selection == 5)
-	{
-		system("CLS");
-		bye();
-		return 0;
-	}
+		else if (selection == 5)
+		{
+			system("CLS");
+			bye();
+			return 0;
+		}
+		else
+		{
+			system("CLS");
+			invalid();
+			display();
+			cin >> selection;
+		}
+	} while (choice != 'n' && choice != 'N');
 }
